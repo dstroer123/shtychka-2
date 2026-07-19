@@ -109,3 +109,12 @@ def profile_view(request):
             "bookings": bookings
         }
     )
+    
+from reservations.models import Booking
+
+def profile_view(request):
+    bookings = Booking.objects.filter(user=request.user)
+
+    return render(request, 'accounts/profile.html', {
+        'bookings': bookings
+    })

@@ -6,8 +6,13 @@ from .views import (
     create_booking,
 )
 
-
 urlpatterns = [
+
+    path(
+        "",
+        object_list,
+        name="home"
+    ),
 
     path(
         "objects/",
@@ -15,15 +20,15 @@ urlpatterns = [
         name="object_list"
     ),
 
-
     path(
         "objects/<int:pk>/",
         object_detail,
         name="object_detail"
     ),
+
     path(
-    "booking/<int:pk>/",
-    create_booking,
-    name="create_booking"
-),
+        "booking/<int:pk>/",
+        create_booking,
+        name="create_booking"
+    ),
 ]

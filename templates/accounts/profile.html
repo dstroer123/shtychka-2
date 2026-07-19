@@ -86,6 +86,17 @@ class="btn btn-danger">
 
 </a>
 
+<h3>Мои бронирования</h3>
+
+{% for booking in bookings %}
+    <div class="card mb-2">
+        <div class="card-body">
+            {{ booking.object.name }}
+        </div>
+    </div>
+{% empty %}
+    <p>Нет бронирований</p>
+{% endfor %}
 
 </div>
 
