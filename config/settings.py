@@ -26,9 +26,9 @@ SECRET_KEY = 'django-insecure-h^=k!-^!p@=@h2!mcjahm@(lesuk^s(ej(xkt(d&@b&xbnd8b^
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'shtychka-2.onrender.com'
+    'shtychka-2.onrender.com',
+    'shtychka-2-1.onrender.com',
 ]
-
 
 # Application definition
 
