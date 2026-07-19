@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+Каталог объектов
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<h1 class="mb-4">
+
+<i class="fa-solid fa-building"></i>
+
+Каталог объектов
+
+</h1>
+
+
+
+<div class="row">
+
+
+{% for object in objects %}
+
+
+<div class="col-md-4 mb-4">
+
+
+<div class="card shadow h-100">
+
+
+{% if object.image %}
+
+<img src="{{ object.image.url }}"
+     class="card-img-top"
+     height="250"
+     style="object-fit: cover;">
+
+{% endif %}
+
+
+
+<div class="card-body">
+
+
+<h4>
+{{ object.title }}
+</h4>
+
+
+<p>
+{{ object.description|truncatechars:120 }}
+</p>
+
+
+
+<p>
+
+<strong>
+Цена:
+</strong>
+
+{{ object.price }} ₸ / час
+
+</p>
+
+
+
+<a href="{% url 'object_detail' object.id %}"
+class="btn btn-primary">
+
+<i class="fa-solid fa-eye"></i>
+
+Подробнее
+
+</a>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+{% empty %}
+
+
+<h3>
+Пока нет доступных объектов
+</h3>
+
+
+{% endfor %}
+
+
+</div>
+
+
+{% endblock %}

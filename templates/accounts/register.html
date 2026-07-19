@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+Регистрация
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<div class="row justify-content-center">
+
+<div class="col-md-6">
+
+
+<div class="card shadow p-4">
+
+
+<h2 class="text-center mb-4">
+
+<i class="fa-solid fa-user-plus"></i>
+
+Регистрация
+
+</h2>
+
+
+
+<form method="post">
+
+{% csrf_token %}
+
+
+{{ form.as_p }}
+
+
+<button class="btn btn-primary w-100">
+
+Создать аккаунт
+
+</button>
+
+
+</form>
+
+
+</div>
+
+
+</div>
+
+</div>
+
+
+{% endblock %}

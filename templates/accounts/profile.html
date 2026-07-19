@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+
+
+
+{% block title %}
+Профиль
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<div class="card shadow p-4">
+
+
+<h2>
+
+<i class="fa-solid fa-user"></i>
+
+Личный кабинет
+
+</h2>
+
+
+<hr>
+
+
+<p>
+<strong>Пользователь:</strong>
+{{ user.username }}
+</p>
+
+
+<p>
+<strong>Email:</strong>
+{{ user.email }}
+</p>
+<hr>
+
+<h3>
+Мои бронирования
+</h3>
+
+
+{% for booking in bookings %}
+
+
+<div class="card mb-3 p-3">
+
+
+<h5>
+{{ booking.booking_object.title }}
+</h5>
+
+
+<p>
+Начало:
+{{ booking.start_datetime }}
+</p>
+
+
+<p>
+Конец:
+{{ booking.end_datetime }}
+</p>
+
+
+</div>
+
+
+{% empty %}
+
+
+<p>
+Бронирований пока нет.
+</p>
+
+
+{% endfor %}
+
+<a href="/logout/"
+class="btn btn-danger">
+
+Выйти
+
+</a>
+
+
+</div>
+
+
+{% endblock %}
